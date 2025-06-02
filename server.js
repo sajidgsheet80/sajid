@@ -4,10 +4,13 @@ const { MongoClient } = require('mongodb');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
 
 // MongoDB config
-const uri = "mongodb://127.0.0.1:27017";
+const uri = process.env.MONGO_URI;
+
+
 const dbName = "sa";
 const collectionName = "users";
 
